@@ -11,6 +11,13 @@ body {
   color: white !important
 }
 
+#movie-card {
+  background-color: inherit;
+}
+
+#movie-text {
+  color: azure
+}
 
 
 

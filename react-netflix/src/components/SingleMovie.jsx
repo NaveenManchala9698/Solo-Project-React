@@ -6,9 +6,9 @@ class SingleMovie extends Component {
 
     render() {
         return (
-            <Card>
+            <Card id="movie-card">
                 <Card.Img variant="top" src={this.props.movie.Poster} />
-                <Card.Body>
+                <Card.Body id="movie-text">
                     <Card.Title>{this.props.movie.Title}</Card.Title>
                     <Card.Text>
                         {this.props.movie.Year}

@@ -42,9 +42,9 @@ class Movielist3 extends Component {
             <Row className="justify-content-center mt-3">
               {this.state.isLoading && (<SpinnerDiamond size={70} thickness={163} speed={100} color="rgba(172, 57, 59, 1)" secondaryColor="rgba(57, 95, 172, 0.44)" />)}  
             
-                {this.state.movies.map(movie => (
+                {this.state.movies.slice(0,4).map(movie => (
                     
-                        <Col key={movie.imdbID} sm={6} md={4} lg={2} className="text-center">
+                        <Col key={movie.imdbID} sm={6} md={4} lg={3} className="text-center">
                             <SingleMovie  movie={movie} />
                         </Col>
                    

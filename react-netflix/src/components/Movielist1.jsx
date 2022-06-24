@@ -1,13 +1,13 @@
 
 import { Component } from "react";
 import SingleMovie from "./SingleMovie";
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Form } from 'react-bootstrap'
 import { SpinnerRoundOutlined } from 'spinners-react'
 
 class Movielist1 extends Component {
     state = {
         movies: [],
-        isLoading: true
+        isLoading: true, searchQuery: ""
     }
     componentDidMount = () => {
         this.fetchMovies(this.props.movieTitle)
@@ -39,13 +39,31 @@ class Movielist1 extends Component {
     render() {
         return (
             <Container>
+
+                <Row>
+                    <Col md={12}>
+                        <Form>
+                            <Form.Group controlId="formBasicEmail">
+
+                                <Form.Control type="text" placeholder="Search Movies" value={this.state.searchQuery} onChange={(e) => {
+                                    this.setState({ searchQuery: e.target.value })
+                                }
+                                } />
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                </Row>
+
+
                 <h1 className="text-light">{this.props.movieTitle}</h1>
                 <Row className="justify-content-center mt-3">
-                    
-                    {this.state.isLoading && (<SpinnerRoundOutlined size={70} thickness={163} speed={100} color="rgba(172, 57, 59, 1)" />)}
-                    {this.state.movies.map(movie => (
 
-                        <Col key={movie.imdbID} sm={6} md={4} lg={2} className="text-center">
+                    {this.state.isLoading && (<SpinnerRoundOutlined size={70} thickness={163} speed={100} color="rgba(172, 57, 59, 1)" />)}
+
+                    
+                    {this.state.movies.slice(0,4).map(movie => (
+
+                        <Col key={movie.imdbID} sm={6} md={4} lg={3} className="text-center">
                             <SingleMovie movie={movie} />
                         </Col>
 

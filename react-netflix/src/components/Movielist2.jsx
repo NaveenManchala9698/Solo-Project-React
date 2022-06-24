@@ -44,7 +44,7 @@ class Movielist2 extends Component {
               {this.state.isLoading && (<SpinnerInfinity size={70} thickness={163} speed={100} color="rgba(172, 57, 59, 1)" secondaryColor="rgba(57, 95, 172, 0.44)" />)}
             
               {this.state.movies &&
-                this.state.movies.map((movie) => (
+                this.state.movies.slice(0,4).map((movie) => (
                   <Col
                     key={movie.imdbID}
                     xs={6}
