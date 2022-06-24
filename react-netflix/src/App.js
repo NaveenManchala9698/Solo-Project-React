@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <MyNav title="Netflix" />
-      <Movielist1 movieTitle="batman" />
-      <Movielist2 movieTitle="superman" />
+      <Movielist1 movieTitle="Batman" />
+      <Movielist2 movieTitle="Superman" />
       <Movielist3 movieTitle="Thor" />
 
     </div>

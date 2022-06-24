@@ -41,7 +41,7 @@ class Movielist1 extends Component {
             <Container>
 
                 <Row>
-                    <Col md={12}>
+                    <Col md={12} className="mt-3">
                         <Form>
                             <Form.Group controlId="formBasicEmail">
 
@@ -61,9 +61,9 @@ class Movielist1 extends Component {
                     {this.state.isLoading && (<SpinnerRoundOutlined size={70} thickness={163} speed={100} color="rgba(172, 57, 59, 1)" />)}
 
                     
-                    {this.state.movies.slice(0,4).map(movie => (
+                    {this.state.movies.slice(0,6).map(movie => (
 
-                        <Col key={movie.imdbID} sm={6} md={4} lg={3} className="text-center">
+                        <Col key={movie.imdbID} sm={6} md={4} lg={2} className="text-center">
                             <SingleMovie movie={movie} />
                         </Col>
 
